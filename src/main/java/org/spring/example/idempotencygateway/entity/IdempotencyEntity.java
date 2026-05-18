@@ -1,5 +1,6 @@
 package org.spring.example.idempotencygateway.entity;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -20,14 +21,13 @@ public class IdempotencyEntity {
     @Column(nullable = false)
     private String requestHash;
 
-    @Column(columnDefinition = "TEXT")
     private String responseBody;
-
-    private Integer statusCode;
 
     private Boolean processing;
 
     private Boolean completed;
+
+    private Integer statusCode;
 
     private LocalDateTime createdAt;
 }
